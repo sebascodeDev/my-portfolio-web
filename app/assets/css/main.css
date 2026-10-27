@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Theme variables for the application */
+
+  --color-navy-primary: #09284b;
+  --color-navy-light: #e4e9f0;
+  --color-orange-accent: #f48106;
+  --color-orange-light: #fdecd9;
+  --color-orange-hover: #d97205;
+  --color-white: #ffffff;
+  --color-blue-gray-muted: #5a6b85;
+  --color-gray-light: #f4f6f9;
+  --color-dark-bg: #081420;
+  --color-dark-surface: #0f2a44;
+
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --radius-button: 8px;
+  --button-padding: 12px 24px;
+  --navbar-padding: 24px 64px;
+
+  /* Colores para los badges de categoría - Light Mode & Dark Mode */
+
+  --color-badge-landing-bg: rgb(241 245 249 / 0.85);
+  --color-badge-landing-text: #475569;
+  --color-badge-landing-bg-dark: rgb(51 65 85 / 0.4);
+  --color-badge-landing-text-dark: #cbd5e1;
+
+  --color-badge-app-movil-bg: rgb(255 237 213 / 0.85);
+  --color-badge-app-movil-text: #f4820a;
+  --color-badge-app-movil-bg-dark: rgb(249 115 22 / 0.15);
+  --color-badge-app-movil-text-dark: #fb923c;
+
+  --color-badge-sitio-web-bg: rgb(219 234 254 / 0.85);
+  --color-badge-sitio-web-text: #1d4ed8;
+  --color-badge-sitio-web-bg-dark: rgb(59 130 246 / 0.15);
+  --color-badge-sitio-web-text-dark: #93c5fd;
+
+  --color-badge-web-app-bg: rgb(209 250 229 / 0.85);
+  --color-badge-web-app-text: #059669;
+  --color-badge-web-app-bg-dark: rgb(16 185 129 / 0.15);
+  --color-badge-web-app-text-dark: #6ee7b7;
+
+  --color-badge-api-bg: rgb(237 233 254 / 0.85);
+  --color-badge-api-text: #7c3aed;
+  --color-badge-api-bg-dark: rgb(139 92 246 / 0.15);
+  --color-badge-api-text-dark: #c4b5fd;
+
+  --color-badge-ecommerce-bg: rgb(252 231 243 / 0.85);
+  --color-badge-ecommerce-text: #db2777;
+  --color-badge-ecommerce-bg-dark: rgb(236 72 153 / 0.15);
+  --color-badge-ecommerce-text-dark: #f9a8d4;
+
+  --color-badge-dashboard-bg: rgb(207 250 254 / 0.85);
+  --color-badge-dashboard-text: #0891b2;
+  --color-badge-dashboard-bg-dark: rgb(6 182 212 / 0.15);
+  --color-badge-dashboard-text-dark: #67e8f9;
+
+  --color-badge-automatizacion-bg: rgb(254 243 199 / 0.85);
+  --color-badge-automatizacion-text: #b45309;
+  --color-badge-automatizacion-bg-dark: rgb(245 158 11 / 0.15);
+  --color-badge-automatizacion-text-dark: #fcd34d;
+
+  --color-badge-open-source-bg: rgb(226 232 240 / 0.85);
+  --color-badge-open-source-text: #334155;
+  --color-badge-open-source-bg-dark: rgb(71 85 105 / 0.3);
+  --color-badge-open-source-text-dark: #cbd5e1;
+
+  --color-badge-juego-bg: rgb(254 226 226 / 0.85);
+  --color-badge-juego-text: #dc2626;
+  --color-badge-juego-bg-dark: rgb(239 68 68 / 0.15);
+  --color-badge-juego-text-dark: #fca5a5;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-slow: float 9s ease-in-out infinite;
+  --animate-drift: drift 18s ease-in-out infinite alternate;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-14px);
+    }
+  }
+
+  @keyframes drift {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    100% {
+      transform: translate(40px, -30px) scale(1.15);
+    }
+  }
+}

@@ -7,7 +7,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare && (husky || true)"
   },
   "dependencies": {
     "@notionhq/client": "^5.26.0",
@@ -19,11 +19,16 @@
   },
   "packageManager": "yarn@4.18.0",
   "devDependencies": {
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
     "@nuxt/fonts": "^0.14.0",
     "@nuxt/icon": "^2.5.1",
     "@nuxtjs/color-mode": "^4.0.1",
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^26.5.1",
-    "tailwindcss": "^4.3.3"
+    "husky": "^9.1.7",
+    "tailwindcss": "^4.3.3",
+    "typescript": "~5.9",
+    "vue-tsc": "^3.3.14"
   }
 }

@@ -2,6 +2,10 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+html {
+    scroll-behavior: smooth;
+}
+
 @theme {
   /* Theme variables for the application */
 
@@ -76,6 +80,7 @@
 
   --animate-float: float 6s ease-in-out infinite;
   --animate-float-slow: float 9s ease-in-out infinite;
+  --animate-float-sm: float-sm 5s ease-in-out infinite;
   --animate-drift: drift 18s ease-in-out infinite alternate;
   --animate-blink: blink 1s step-end infinite;
 
@@ -89,6 +94,16 @@
     }
   }
 
+  @keyframes float-sm {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+
   @keyframes drift {
     0% {
       transform: translate(0, 0) scale(1);
@@ -99,6 +114,8 @@
   }
 
   @keyframes blink {
-    50% { opacity: 0; }
+    50% {
+      opacity: 0;
+    }
   }
 }

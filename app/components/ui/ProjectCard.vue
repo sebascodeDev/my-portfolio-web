@@ -60,7 +60,7 @@ defineProps<{
           :href="repoUrl"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center justify-center gap-2 py-3 rounded-lg bg-navy-primary/5 dark:bg-white/5 hover:bg-navy-primary/10 dark:hover:bg-white/10 text-navy-primary dark:text-white font-heading font-semibold text-sm transition-colors"
+          class="flex items-center justify-center gap-2 py-3 rounded-lg bg-navy-primary/5 dark:bg-white/5 hover:bg-navy-primary/10 dark:hover:bg-white/10 active:bg-navy-primary/20 dark:active:bg-white/20 text-navy-primary dark:text-white font-heading font-semibold text-sm transition-colors"
           :class="liveUrl ? 'px-4' : 'flex-1'"
         >
           <Icon name="lucide:github" class="w-4 h-4" />

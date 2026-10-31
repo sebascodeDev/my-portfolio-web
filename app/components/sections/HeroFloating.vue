@@ -1,11 +1,18 @@
 <script setup lang="ts">
-const chips = [
-    { icon: 'simple-icons:nuxtdotjs', label: 'Nuxt', pos: 'left-[6%] top-[26%]', anim: 'animate-float' },
-    { icon: 'simple-icons:tailwindcss', label: 'Tailwind', pos: 'right-[7%] top-[22%]', anim: 'animate-float-slow [animation-delay:-3s]' },
-    { icon: 'simple-icons:typescript', label: 'TypeScript', pos: 'left-[9%] bottom-[24%]', anim: 'animate-float-slow [animation-delay:-5s]' },
-    { icon: 'simple-icons:vuedotjs', label: 'Vue', pos: 'right-[10%] bottom-[30%]', anim: 'animate-float [animation-delay:-2s]' },
-    { icon: 'simple-icons:git', label: 'Git', pos: 'left-[14%] top-[46%]', anim: 'animate-float-slow [animation-delay:-4s]' },
-]
+// La lista de tecnologías vive en app/utils/techStack.ts.
+// Aquí solo se define dónde flota cada chip en escritorio.
+const layout: Record<string, string> = {
+    Nuxt: 'left-[6%] top-[26%] animate-float',
+    Tailwind: 'right-[7%] top-[22%] animate-float-slow [animation-delay:-3s]',
+    TypeScript: 'left-[9%] bottom-[24%] animate-float-slow [animation-delay:-5s]',
+    Vue: 'right-[10%] bottom-[30%] animate-float [animation-delay:-2s]',
+    Git: 'left-[14%] top-[46%] animate-float-slow [animation-delay:-4s]',
+}
+
+// Solo flotan las tecnologías que tienen posición asignada
+const chips = techStack
+    .filter((tech) => tech.label in layout)
+    .map((tech) => ({ ...tech, classes: layout[tech.label] }))
 
 const chipBase =
     'absolute flex items-center gap-2 rounded-xl border border-navy-primary/10 dark:border-white/10 bg-white/70 dark:bg-white/5 px-3 py-2 text-sm font-body font-medium text-navy-primary dark:text-white shadow-lg shadow-navy-primary/5 dark:shadow-black/20 backdrop-blur-md motion-reduce:animate-none'
@@ -14,7 +21,7 @@ const chipBase =
 <template>
     <!-- Solo desde xl, para no tapar el titular -->
     <div aria-hidden="true" class="pointer-events-none absolute inset-0 hidden xl:block">
-        <div v-for="chip in chips" :key="chip.label" :class="[chipBase, chip.pos, chip.anim]">
+        <div v-for="chip in chips" :key="chip.label" :class="[chipBase, chip.classes]">
             <Icon :name="chip.icon" class="h-4 w-4 text-orange-accent" />
             {{ chip.label }}
         </div>

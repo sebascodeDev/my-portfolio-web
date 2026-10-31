@@ -1,3 +1,8 @@
+<script setup lang="ts">
+const { text, isAnimating } = useTypewriter(['Landing Page', 'Web App', 'Sitio Web'])
+</script>
+
+
 <template>
     <section
         class="relative isolate min-h-screen overflow-hidden text-center justify-center items-center flex flex-col gap-6 bg-white dark:bg-dark-bg">
@@ -13,7 +18,11 @@
 
         <h1 class="text-5xl lg:text-7xl font-bold text-navy-primary max-w-2xl leading-tight dark:text-white">
             Transformo ideas en <br />
-            <span class="text-orange-accent">Landing Page</span><br>
+            <span class="sr-only">Landing Page</span>
+            <span aria-hidden="true" class="whitespace-nowrap text-orange-accent">
+                {{ text }}<span class="ml-1 inline-block h-[0.85em] w-[3px] translate-y-[0.08em] bg-current"
+                    :class="isAnimating ? 'animate-blink' : 'opacity-0'" />
+            </span><br />
             de alto impacto
         </h1>
         <p class="text-sm md:text-base lg:text-xl text-blue-gray-muted max-w-xl mx-auto leading-relaxed">

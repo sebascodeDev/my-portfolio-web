@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      # Corepack debe activarse ANTES de setup-node para que Yarn 4 y su caché funcionen
+      - name: Habilitar Corepack
+        run: corepack enable
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: yarn
+
+      - name: Instalar dependencias
+        run: yarn install --immutable
+        env:
+          HUSKY: 0
+
+      - name: Validar mensajes de commit
+        if: github.event_name == 'pull_request'
+        run: >
+          yarn commitlint
+          --from ${{ github.event.pull_request.base.sha }}
+          --to ${{ github.event.pull_request.head.sha }}
+          --verbose
+
+      - name: Typecheck
+        run: yarn nuxt typecheck
+
+      - name: Build
+        run: yarn build

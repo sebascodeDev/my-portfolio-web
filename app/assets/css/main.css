@@ -19,12 +19,21 @@ html {
   --color-gray-light: #f4f6f9;
   --color-dark-bg: #081420;
   --color-dark-surface: #0f2a44;
+  --color-dark-text-secondary: #a8b6cc;
+  --color-dark-bg-alt: #0f1521;
 
   --font-heading: "Poppins", sans-serif;
   --font-body: "Inter", sans-serif;
   --radius-button: 8px;
   --button-padding: 12px 24px;
-  --navbar-padding: 24px 64px;
+  --navbar-padding: 24px 24px;
+  --radius-card: 1rem;
+  --radius-chip: 0.75rem;
+  --background-image-hero-glow: radial-gradient(
+    circle at 50% 40%,
+    color-mix(in srgb, var(--color-orange-accent) 15%, transparent),
+    transparent 60%
+  );
 
   /* Colores para los badges de categoría - Light Mode & Dark Mode */
 
@@ -118,4 +127,27 @@ html {
       opacity: 0;
     }
   }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --navbar-padding: 24px 64px;
+  }
+}
+
+@layer base {
+  body {
+    @apply font-body;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-heading;
+  }
+}
+
+/* Estandar de card del sitio (usar junto a `group`) */
+@utility card-surface {
+  @apply relative overflow-hidden rounded-card border border-navy-primary/5 bg-white shadow-lg shadow-navy-primary/10 transition-all duration-300 before:absolute before:inset-x-0 before:top-0 before:z-10 before:h-1 before:bg-orange-accent hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-accent/20 motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:border-white/10 dark:bg-dark-surface dark:shadow-black/40 dark:hover:border-orange-accent/30 dark:hover:shadow-orange-accent/10;
 }

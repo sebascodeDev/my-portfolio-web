@@ -15,7 +15,7 @@ const chips = techStack
     .map((tech) => ({ ...tech, classes: layout[tech.label] }))
 
 const chipBase =
-    'absolute flex items-center gap-2 rounded-xl border border-navy-primary/10 dark:border-white/10 bg-white/70 dark:bg-white/5 px-3 py-2 text-sm font-body font-medium text-navy-primary dark:text-white shadow-lg shadow-navy-primary/5 dark:shadow-black/20 backdrop-blur-md motion-reduce:animate-none'
+    'absolute flex items-center gap-2 rounded-chip border border-navy-primary/10 dark:border-white/10 bg-white/70 dark:bg-white/5 px-3 py-2 text-sm font-body font-medium text-navy-primary dark:text-white shadow-lg shadow-navy-primary/5 dark:shadow-black/20 backdrop-blur-md motion-reduce:animate-none'
 </script>
 
 <template>

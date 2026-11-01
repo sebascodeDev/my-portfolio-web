@@ -1,7 +1,9 @@
-<script setup>
-defineProps({
-  label: String,
-  variant: { type: String, default: 'neutral' }
+<script setup lang="ts">
+withDefaults(defineProps<{
+  label: string
+  variant?: 'neutral' | 'orange' | 'navy'
+}>(), {
+  variant: 'neutral',
 })
 </script>
 

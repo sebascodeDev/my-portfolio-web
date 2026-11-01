@@ -1,4 +1,4 @@
-<!-- components/ui/ThemeToggle.vue -->
+<!-- components/ui/ToggleTheme.vue -->
 <script setup lang="ts">
 
 const colorMode = useColorMode()
@@ -15,6 +15,7 @@ const toggle = () => {
     aria-label="Cambiar tema"
   >
     <Icon
+      aria-hidden="true"
       name="lucide:sun"
       class="absolute w-5 h-5 text-orange-accent transition-all duration-300"
       :class="colorMode.value === 'dark'
@@ -22,6 +23,7 @@ const toggle = () => {
         : 'opacity-100 rotate-0 scale-100'"
     />
     <Icon
+      aria-hidden="true"
       name="lucide:moon"
       class="absolute w-5 h-5 text-navy-primary dark:text-white transition-all duration-300"
       :class="colorMode.value === 'dark'

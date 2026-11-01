@@ -10,8 +10,7 @@ const { text, isAnimating } = useTypewriter(['Landing Page', 'Web App', 'Sitio W
         <SectionsHeroBackground class="-z-10" />
         <SectionsHeroFloating class="-z-10" />
 
-        <div class="absolute inset-0 pointer-events-none"
-            style="background: radial-gradient(circle at 50% 40%, rgba(244, 129, 6, 0.15), transparent 60%);">
+        <div class="absolute inset-0 pointer-events-none bg-hero-glow">
         </div>
 
         <UiBadge label="Fullstack Developer & Landing Expert" variant="orange" />
@@ -25,13 +24,14 @@ const { text, isAnimating } = useTypewriter(['Landing Page', 'Web App', 'Sitio W
             </span><br />
             de alto impacto
         </h1>
-        <p class="text-base sm:text-lg lg:text-xl text-blue-gray-muted max-w-xl mx-auto leading-relaxed">
+        <p class="text-base sm:text-lg lg:text-xl text-blue-gray-muted dark:text-dark-text-secondary max-w-xl mx-auto leading-relaxed">
             Soy Sebastián. Creo experiencias digitales rápidas, claras y
             optimizadas para conversión usando el stack tecnológico más moderno.</p>
 
-        <div class="flex w-full max-w-sm flex-col gap-3 sm:w-auto sm:max-w-none sm:flex-row sm:gap-4"">
-            <UiAppButton label="Ver Proyectos" variant="primary" to="#proyectos" class="w-full sm:w-auto"/>
-            <UiAppButton label="Consultoría Gratuita" variant="secondary" />
+        <div class="flex w-full max-w-sm flex-col gap-3 sm:w-auto sm:max-w-none sm:flex-row sm:gap-4">
+            <UiAppButton label="Ver Proyectos" href="#proyectos" class="w-full sm:w-auto" />
+
+            <UiAppButton label="Consultoría Gratuita" variant="secondary" href="#contacto" class="w-full sm:w-auto" />
         </div>
 
         <SectionsHeroTechRow />

@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 
 const isMenuOpen = ref(false)
 
@@ -27,8 +27,8 @@ const closeMenu = () => {
 
 
 <template>
-    <nav "
-        class=" fixed top-0 w-full z-50 bg-white/70 dark:bg-dark-bg/70 backdrop-blur-md border-b
+    <nav
+        class="fixed top-0 w-full z-50 bg-white/70 dark:bg-dark-bg/70 backdrop-blur-md border-b
         border-blue-gray-muted/20 p-[var(--navbar-padding)] flex justify-between items-center">
 
         <UiLogoSV />
@@ -40,14 +40,14 @@ const closeMenu = () => {
         </ul>
 
         <div class="hidden md:flex items-center gap-4">
-            <UiAppButton label="Contáctame" variant="primary" />
+            <UiAppButton label="Contáctame" variant="primary" href="#contacto" />
             <UiToggleTheme />
         </div>
 
         <button @click="toggleMenu"
             class="md:hidden w-11 h-11 rounded-lg bg-navy-primary/10 dark:bg-white/5 flex items-center justify-center text-navy-primary dark:text-white pointer-events-auto dark:hover:bg-white/20 hover:bg-navy-primary/20 transition-colors duration-200 active:bg-navy-primary/30 dark:active:bg-white/30"
-            aria-label="Abrir menú">
-            <Icon :name="isMenuOpen ? 'lucide:x' : 'lucide:menu'" class="w-7 h-7" />
+            :aria-label="isMenuOpen ? 'Cerrar menú' : 'Abrir menú'" :aria-expanded="isMenuOpen">
+            <Icon aria-hidden="true" :name="isMenuOpen ? 'lucide:x' : 'lucide:menu'" class="w-7 h-7" />
         </button>
 
 
@@ -73,22 +73,22 @@ const closeMenu = () => {
             <!-- Footer: botones, email y redes -->
             <div class="shrink-0 space-y-3 border-t border-blue-gray-muted/20 p-[var(--navbar-padding)]">
                 <a href="#contacto"
-                    class="block rounded-xl bg-orange-accent py-4 text-center text-base font-semibold text-white hover:bg-orange-hover transition-colors">
+                    class="block rounded-xl bg-orange-accent py-4 text-center text-base font-semibold text-white hover:bg-orange-accent/80 active:bg-orange-accent/80 transition-colors">
                     Consultoría Gratuita
                 </a>
                 <div class="flex items-center justify-between pt-2">
                     <div class="flex gap-2">
-                        <a href="https://github.com/sebascodeDev" target="_blank" rel="noopener noreferrer"
+                        <a href="https://github.com/sebascodeDev" aria-label="GitHub" target="_blank" rel="noopener noreferrer"
                             class="flex h-11 w-11 items-center justify-center rounded-lg bg-navy-primary/10 dark:bg-white/5 text-navy-primary dark:text-white hover:bg-navy-primary/20 dark:hover:bg-white/20 active:bg-navy-primary/30 dark:active:bg-white/30 transition-colors">
-                            <Icon name="bi:github" class="h-4 w-4" />
+                            <Icon aria-hidden="true" name="bi:github" class="h-4 w-4" />
                         </a>
-                        <a href="https://www.linkedin.com/in/svalarezodev/" target="_blank" rel="noopener noreferrer"
+                        <a href="https://www.linkedin.com/in/svalarezodev/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"
                             class="flex h-11 w-11 items-center justify-center rounded-lg bg-navy-primary/10 dark:bg-white/5 text-navy-primary dark:text-white hover:bg-navy-primary/20 dark:hover:bg-white/20 active:bg-navy-primary/30 dark:active:bg-white/30 transition-colors">
-                            <Icon name="bi:linkedin" class="h-4 w-4" />
+                            <Icon aria-hidden="true" name="bi:linkedin" class="h-4 w-4" />
                         </a>
-                        <a href="https://twitter.com/svalarezoDev" target="_blank" rel="noopener noreferrer"
+                        <a href="https://twitter.com/svalarezoDev" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer"
                             class="flex h-11 w-11 items-center justify-center rounded-lg bg-navy-primary/10 dark:bg-white/5 text-navy-primary dark:text-white hover:bg-navy-primary/20 dark:hover:bg-white/20 active:bg-navy-primary/30 dark:active:bg-white/30 transition-colors">
-                            <Icon name="bi:twitter-x" class="h-4 w-4" />
+                            <Icon aria-hidden="true" name="bi:twitter-x" class="h-4 w-4" />
                         </a>
                     </div>
                     <UiToggleTheme />                   

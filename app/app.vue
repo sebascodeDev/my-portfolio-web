@@ -3,4 +3,5 @@
   <SectionsHeroSection/>
   <SectionsServiceSection/>
   <SectionsProjectSection/>
+  <LayoutFooter/>
 </template>
